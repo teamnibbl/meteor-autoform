@@ -2,24 +2,27 @@ Package.describe({
   name: "aldeed:autoform",
   summary: "Easily create forms with automatic insert and update, and automatic reactive validation.",
   git: "https://github.com/aldeed/meteor-autoform.git",
-  version: "5.8.1"
+  version: "5.8.1_1"
 });
 
 Package.onUse(function(api) {
   // Dependencies
-  api.versionsFrom(['METEOR@0.9.3', 'METEOR@0.9.4', 'METEOR@1.0']);
+  api.versionsFrom(['METEOR@1.4.2.3']);
   // common
-  api.use('aldeed:simple-schema@1.1.0');
+  // api.use('aldeed:simple-schema@1.1.0');
+  api.use('ecmascript', ['client','server']);
+  // Npm.depends({'simpl-schema': '0.0.3'}); -- simple-schema appears to have a bug where it always runs a require on babel-polyfill and crashes meteor. needs a fix like this https://github.com/shakacode/bootstrap-loader/pull/29/files. removing it from .depends of my other locally-cloned packages too.
+  // Npm.depends({'mongo-object': '^0.0.1'}); -- i am just going to add this as a project core dependency and then import it.
   api.use('check');
   // client
   api.use(['livedata', 'underscore', 'deps', 'templating', 'ui', 'blaze', 'ejson', 'reactive-var', 'reactive-dict', 'random', 'jquery'], 'client');
-  api.use('momentjs:moment@2.10.6', 'client');
+  api.use('momentjs:moment@2.17.1', 'client');
   api.use('mrt:moment-timezone@0.2.1', 'client', {weak: true});
   api.use('aldeed:moment-timezone@0.4.0', 'client', {weak: true});
   api.use(['aldeed:collection2@2.0.0', 'reload'], 'client', {weak: true});
 
   // Imply SS to make sure SimpleSchema object is available to app
-  api.imply('aldeed:simple-schema');
+  // api.imply('aldeed:simple-schema');
 
   // Exports
   api.export('AutoForm', 'client');

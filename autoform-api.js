@@ -1,3 +1,6 @@
+import MongoObject from 'mongo-object';
+import SimpleSchema from 'simpl-schema';
+
 /* global AutoForm:true, SimpleSchema, Utility, Hooks, deps, globalDefaultTemplate:true, defaultTypeTemplates:true, validateField, arrayTracker, ReactiveVar, getAllFieldsInForm, setDefaults:true, getFlatDocOfFieldValues, MongoObject */
 
 // This file defines the public, exported API

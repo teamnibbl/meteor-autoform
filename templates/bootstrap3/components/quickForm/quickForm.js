@@ -1,3 +1,4 @@
+import SimpleSchema from 'simpl-schema';
 Template.quickForm_bootstrap3.helpers({
   fieldGroupLabel: function () {
     var name = this.name;

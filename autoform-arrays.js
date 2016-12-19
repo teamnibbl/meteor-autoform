@@ -1,3 +1,5 @@
+import SimpleSchema from 'simpl-schema';
+
 // Track arrays; this allows us to add/remove fields or groups of fields for an array
 // but still easily respect minCount and maxCount, and properly add/remove the same
 // items from the database once the form is submitted.
@@ -208,9 +210,9 @@ ArrayTracker.prototype.removeFromFieldAtIndex = function atRemoveFromFieldAtInde
 var createLoopCtx = function(formId, field, index, childKeys, overrideMinCount, overrideMaxCount) {
   var loopCtx = {
   	formId:         formId,
-  	arrayFieldName: field, 
+  	arrayFieldName: field,
   	name:           field + '.' + index,
-  	index:          index, 
+  	index:          index,
   	minCount:       overrideMinCount,
   	maxCount:       overrideMaxCount
   };

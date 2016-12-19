@@ -1,3 +1,4 @@
+import SimpleSchema from 'simpl-schema';
 /* global AutoForm, Hooks, validateField, updateTrackedFieldValue, arrayTracker, updateAllTrackedFieldValues, SimpleSchema */
 
 // all form events handled here

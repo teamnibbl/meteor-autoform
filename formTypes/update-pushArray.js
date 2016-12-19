@@ -1,3 +1,4 @@
+import SimpleSchema from 'simpl-schema';
 /* global AutoForm, SimpleSchema */
 
 AutoForm.addFormType('update-pushArray', {

@@ -1,3 +1,4 @@
+import SimpleSchema from 'simpl-schema';
 /* global Utility:true, MongoObject, AutoForm, moment, SimpleSchema */
 
 Utility = {

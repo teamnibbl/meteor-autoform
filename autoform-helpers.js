@@ -1,3 +1,4 @@
+import SimpleSchema from 'simpl-schema';
 /* global arrayTracker, SimpleSchema, AutoForm */
 
 function parseOptions(options) {

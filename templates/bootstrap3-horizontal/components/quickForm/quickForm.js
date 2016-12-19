@@ -1,3 +1,5 @@
+import SimpleSchema from 'simpl-schema';
+
 Template['quickForm_bootstrap3-horizontal'].helpers({
   inputClass: function () {
     return this.atts["input-col-class"];
