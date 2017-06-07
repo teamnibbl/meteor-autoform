@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   // Dependencies
-  api.versionsFrom(['METEOR@1.4.2.3']);
+  api.versionsFrom(['METEOR@1.5']);
   // common
   // api.use('aldeed:simple-schema@1.1.0');
   api.use('ecmascript', ['client','server']);
@@ -16,7 +16,7 @@ Package.onUse(function(api) {
   api.use('check');
   // client
   api.use(['livedata', 'underscore', 'deps', 'templating', 'ui', 'blaze', 'ejson', 'reactive-var', 'reactive-dict', 'random', 'jquery'], 'client');
-  api.use('momentjs:moment@2.17.1', 'client');
+  api.use('momentjs:moment@2.18.1', 'client');
   api.use('mrt:moment-timezone@0.2.1', 'client', {weak: true});
   api.use('aldeed:moment-timezone@0.4.0', 'client', {weak: true});
   api.use(['aldeed:collection2@2.0.0', 'reload'], 'client', {weak: true});

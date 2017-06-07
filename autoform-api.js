@@ -1194,7 +1194,8 @@ AutoForm._validateFormDoc = function validateFormDoc(doc, isModifier, formId, ss
   // Validate
   // If `key` is provided, we validate that key/field only
   if (key) {
-    isValid = vc.validateOne(docForValidation, key, {
+    isValid = vc.validate(docForValidation, {
+      keys: [key],
       modifier: isModifier,
       extendedCustomContext: ec
     });
@@ -1203,7 +1204,7 @@ AutoForm._validateFormDoc = function validateFormDoc(doc, isModifier, formId, ss
     var stickyError = AutoForm.templateInstanceForForm(formId)._stickyErrors[key];
     if (stickyError) {
       isValid = false;
-      vc.addInvalidKeys([
+      vc.addValidationErrors([
         {name: key, type: stickyError.type, value: stickyError.value}
       ]);
     }
@@ -1220,7 +1221,7 @@ AutoForm._validateFormDoc = function validateFormDoc(doc, isModifier, formId, ss
       stickyErrors = _.map(stickyErrors, function (obj, k) {
         return {name: k, type: obj.type, value: obj.value};
       });
-      vc.addInvalidKeys(stickyErrors);
+      vc.addValidationErrors(stickyErrors);
     }
 
     if (!isValid) {
